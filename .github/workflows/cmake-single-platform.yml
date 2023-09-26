@@ -27,8 +27,8 @@ jobs:
       # uses: snickerbockers/submodules-init@74927a8bb0fe1bb0f1f1e4d102384a8e69f19171
       uses: snickerbockers/submodules-init@v4
 
-    - name: Run build script
-      uses: Amadevus/pwsh-script@v2.0.3
-      with:
-        script: build-release.ps1
-    
+    - name: CMake Generate Buildsystem
+      run: cmake -B ${{github.workspace}}/build -S ${{github.workspace}}/Plugin --preset=REL
+
+    - name: CMake Build
+      run: cmake --build ${{github.workspace}}/build --config Release
