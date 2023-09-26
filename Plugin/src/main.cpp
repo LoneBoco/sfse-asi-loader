@@ -28,11 +28,11 @@ DLLEXPORT constinit auto SFSEPlugin_Version = []() noexcept {
 	data.PluginVersion(Plugin::Version);
 	data.PluginName(Plugin::NAME);
 	data.AuthorName(Plugin::AUTHOR);
-	data.UsesSigScanning(true);
-	//data.UsesAddressLibrary(true);
+	//data.UsesSigScanning(true);
+	data.UsesAddressLibrary(true);
 	data.HasNoStructUse(true);
 	//data.IsLayoutDependent(true);
-	data.CompatibleVersions({ RUNTIME_VERSION_1_7_23, RUNTIME_VERSION_1_7_29 });
+	//data.CompatibleVersions({ RUNTIME_VERSION_1_7_23, RUNTIME_VERSION_1_7_29 });
 
 	return data;
 }();
